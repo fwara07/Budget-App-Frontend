@@ -69,11 +69,7 @@ class Dashboard extends Component {
           </div>
           <div className="col">
             <div className="home__hero-img-wrapper">
-              <img
-                src="finance.svg"
-                alt="Finance Image"
-                className="home__hero-img"
-              />
+              <img src="finance.svg" alt="Finance" className="home__hero-img" />
             </div>
           </div>
         </div>
