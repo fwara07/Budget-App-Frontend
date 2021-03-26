@@ -4,8 +4,6 @@ import {
   Card,
   CardContent,
   Grid,
-  Input,
-  InputLabel,
   Typography,
   TextField,
 } from "@material-ui/core";
@@ -14,7 +12,7 @@ export default class Withdraw extends Component {
   state = {
     category: JSON.parse(localStorage.getItem("categories")).find(
       (category) => {
-        return category.id == this.props.category;
+        return category.id === this.props.category;
       }
     ),
     amount: 0,

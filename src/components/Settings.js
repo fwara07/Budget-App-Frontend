@@ -18,7 +18,7 @@ export default class Settings extends Component {
   state = {
     category: JSON.parse(localStorage.getItem("categories")).find(
       (category) => {
-        return category.id == this.props.match.params.id;
+        return category.id === this.props.match.params.id;
       }
     ),
     open: false,

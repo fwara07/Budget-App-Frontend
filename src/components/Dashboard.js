@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Container,
-  makeStyles,
-  Typography,
-  colors,
-  Grid,
-} from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Button, Container, colors, Grid } from "@material-ui/core";
 import SpendingPerCategory from "./containers/SpendingPerCategory";
 import "./Dashboard.css";
 import { ThemeProvider, withStyles } from "@material-ui/core/styles";
@@ -18,7 +10,7 @@ import TotalBalance from "./containers/TotalBalance";
 import CategoryList from "./containers/CategoryList";
 import HighestPerformingCategory from "./containers/HighestPerformingCategory";
 import LowestPerformingCategory from "./containers/LowestPerformingCategory";
-import Sales from "./containers/Sales";
+import LineChart from "./containers/LineChart";
 import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
 import { getAllCategories } from "./actions/actions";
@@ -108,7 +100,7 @@ class Dashboard extends Component {
               <LowestPerformingCategory />
             </Grid>
             <Grid item lg={8} md={12} xl={9} xs={12}>
-              <Sales />
+              <LineChart />
             </Grid>
             <Grid item lg={4} md={6} xl={3} xs={12}>
               <CategoryList />

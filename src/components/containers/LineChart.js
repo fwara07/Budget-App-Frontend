@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { Bar } from "react-chartjs-2";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
@@ -13,14 +12,12 @@ import {
   makeStyles,
   colors,
 } from "@material-ui/core";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-const Sales = ({ className, ...rest }) => {
+const LineChart = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
   const labels = JSON.parse(localStorage.getItem("categories")).map(
@@ -120,8 +117,8 @@ const Sales = ({ className, ...rest }) => {
   );
 };
 
-Sales.propTypes = {
+LineChart.propTypes = {
   className: PropTypes.string,
 };
 
-export default Sales;
+export default LineChart;

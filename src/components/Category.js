@@ -2,10 +2,9 @@ import React, { Component } from "react";
 import Deposit from "./containers/Deposit";
 import Withdraw from "./containers/Withdraw";
 import Transfer from "./containers/Transfer";
-import { Button, Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid, Typography } from "@material-ui/core";
 import WelcomeCategoryCard from "./containers/WelcomeCategoryCard";
 import Page from "./containers/Page";
-import moment from "moment";
 import { getBalance } from "./actions/actions";
 
 export default class Category extends Component {

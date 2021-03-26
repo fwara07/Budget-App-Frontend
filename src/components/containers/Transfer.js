@@ -23,7 +23,7 @@ export default class Transfer extends Component {
   transfer = (e) => {
     e.preventDefault();
     const withdraw_data = { ...this.state };
-    if (withdraw_data.category == "") {
+    if (withdraw_data.category === "") {
       this.setState({ categoryError: "You must select a valid category" });
     } else {
       withdraw_data.category = this.props.category;
@@ -128,7 +128,6 @@ export default class Transfer extends Component {
                 value={this.state.amount}
                 error={this.state.error}
                 helperText={this.state.error}
-                required={true}
                 onChange={this.handle_change}
               />
             </Grid>

@@ -3,8 +3,6 @@ import {
   Button,
   Card,
   CardContent,
-  Input,
-  InputLabel,
   TextField,
   Typography,
   Grid,
@@ -14,7 +12,7 @@ export default class Deposit extends Component {
   state = {
     category: JSON.parse(localStorage.getItem("categories")).find(
       (category) => {
-        return category.id == this.props.category;
+        return category.id === this.props.category;
       }
     ),
     amount: 0,

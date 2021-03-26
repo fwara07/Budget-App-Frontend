@@ -60,7 +60,7 @@ class SignupForm extends React.Component {
               username: "",
               error: {
                 ...this.state.error,
-                ["username"]: json.msg,
+                username: json.msg,
               },
             });
           } else {
@@ -75,7 +75,7 @@ class SignupForm extends React.Component {
         password: "",
         error: {
           ...this.state.error,
-          ["password"]: is_valid.msg,
+          password: is_valid.msg,
         },
       });
     }

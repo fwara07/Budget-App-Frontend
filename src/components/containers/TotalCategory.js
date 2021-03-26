@@ -13,7 +13,6 @@ import {
   Button,
 } from "@material-ui/core";
 import PeopleIcon from "@material-ui/icons/PeopleOutlined";
-import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
 const useStyles = makeStyles((theme) => ({
   root: {
