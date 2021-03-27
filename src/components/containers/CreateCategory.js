@@ -86,7 +86,7 @@ class CreateCategory extends Component {
         ? `update-category/${this.updateCategoryID}`
         : "create-category";
       const fetchMethod = this.isUpdate ? "PUT" : "POST";
-      fetch(`/api/${fetchUrl}`, {
+      fetch(`https://budget-planning.herokuapp.com/api/${fetchUrl}`, {
         method: fetchMethod,
         headers: {
           "Content-Type": "application/json",

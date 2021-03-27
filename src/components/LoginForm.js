@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const data = { ...this.state };
     delete data.error;
-    fetch("/token-auth/", {
+    fetch("https://budget-planning.herokuapp.com/token-auth/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

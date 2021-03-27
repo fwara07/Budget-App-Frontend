@@ -35,7 +35,7 @@ const SpendingPerCategory = ({ className, ...rest }) => {
   ];
 
   useEffect(() => {
-    fetch("/api/get-percentage", {
+    fetch("https://budget-planning.herokuapp.com/api/get-percentage", {
       headers: {
         Authorization: `JWT ${localStorage.getItem("token")}`,
       },

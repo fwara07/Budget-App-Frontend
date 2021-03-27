@@ -26,7 +26,7 @@ const LineChart = ({ className, ...rest }) => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    fetch("/api/get-line-chart-data", {
+    fetch("https://budget-planning.herokuapp.com/api/get-line-chart-data", {
       headers: {
         Authorization: `Jwt ${localStorage.getItem("token")}`,
       },

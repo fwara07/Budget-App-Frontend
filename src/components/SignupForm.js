@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
     delete data.error;
     const is_valid = this.validateData(data);
     if (is_valid.ok) {
-      fetch("/core/users/", {
+      fetch("https://budget-planning.herokuapp.com/core/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

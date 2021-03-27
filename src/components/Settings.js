@@ -37,12 +37,15 @@ export default class Settings extends Component {
   };
 
   deletCategory = () => {
-    fetch(`/api/delete-category/${this.state.category.id}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `JWT ${localStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      `https://budget-planning.herokuapp.com/api/delete-category/${this.state.category.id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `JWT ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((_json) => {
         getAllCategories(() => {});

@@ -26,7 +26,7 @@ export default class Withdraw extends Component {
     data.category = data.category.id;
     delete data.error;
     if (this.validateData(data)) {
-      fetch("/api/withdraw", {
+      fetch("https://budget-planning.herokuapp.com/api/withdraw", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

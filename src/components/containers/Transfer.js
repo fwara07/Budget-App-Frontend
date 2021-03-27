@@ -40,7 +40,7 @@ export default class Transfer extends Component {
           error: "You cannot transfer funds less than or equal to $0.00",
         });
       } else {
-        fetch("/api/withdraw", {
+        fetch("https://budget-planning.herokuapp.com/api/withdraw", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default class Transfer extends Component {
         }).then((_res) => {
           const deposit_data = { ...this.state };
           deposit_data.category = this.state.category;
-          fetch("/api/deposit", {
+          fetch("https://budget-planning.herokuapp.com/api/deposit", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

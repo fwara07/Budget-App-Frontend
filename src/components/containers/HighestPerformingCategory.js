@@ -28,11 +28,14 @@ const HighestPerformingCategory = ({ className, ...rest }) => {
   const [performingCategory, setPerformingCategory] = useState("");
 
   useEffect(() => {
-    fetch("/api/highest-performing-category", {
-      headers: {
-        Authorization: `JWT ${localStorage.getItem("token")}`,
-      },
-    })
+    fetch(
+      "https://budget-planning.herokuapp.com/api/highest-performing-category",
+      {
+        headers: {
+          Authorization: `JWT ${localStorage.getItem("token")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((json) => {
         setPerformingCategory(json);

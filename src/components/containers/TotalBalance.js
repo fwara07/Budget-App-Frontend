@@ -28,7 +28,7 @@ const TotalBalance = ({ className, ...rest }) => {
   const [balance, setBalance] = useState(0);
 
   useEffect(() => {
-    fetch("/api/total-balance", {
+    fetch("https://budget-planning.herokuapp.com/api/total-balance", {
       headers: {
         Authorization: `JWT ${localStorage.getItem("token")}`,
       },

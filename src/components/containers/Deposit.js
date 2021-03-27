@@ -26,7 +26,7 @@ export default class Deposit extends Component {
     data.category = data.category.id;
     delete data.error;
     if (this.validateData(data)) {
-      fetch("/api/deposit", {
+      fetch("https://budget-planning.herokuapp.com/api/deposit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

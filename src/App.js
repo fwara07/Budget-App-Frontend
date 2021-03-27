@@ -22,7 +22,7 @@ class App extends Component {
 
   componentDidMount() {
     if (this.state.logged_in) {
-      fetch("/core/current_user/", {
+      fetch("https://budget-planning.herokuapp.com/core/current_user/", {
         headers: {
           Authorization: `JWT ${localStorage.getItem("token")}`,
         },
