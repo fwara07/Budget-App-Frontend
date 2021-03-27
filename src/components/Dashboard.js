@@ -26,8 +26,18 @@ const styles = (theme) => ({
 
 class Dashboard extends Component {
   state = {
-    categories: [],
-    has_categories: false,
+    categories:
+      localStorage.getItem("categories") === null
+        ? []
+        : JSON.parse(localStorage.getItem("categories")).length > 0
+        ? JSON.parse(localStorage.getItem("categories"))
+        : [],
+    has_categories:
+      localStorage.getItem("categories") === null
+        ? false
+        : JSON.parse(localStorage.getItem("categories")).length > 0
+        ? true
+        : false,
   };
 
   setCategoriesState = (json) => {
