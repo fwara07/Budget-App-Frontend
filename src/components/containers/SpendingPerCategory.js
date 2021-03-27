@@ -106,7 +106,7 @@ const SpendingPerCategory = ({ className, ...rest }) => {
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardHeader title="Spending Per Category" />
       <Divider />
-      {this.error ? (
+      {error ? (
         <CardContent>
           <Box height={300} position="relative">
             <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
