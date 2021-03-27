@@ -109,7 +109,7 @@ const SpendingPerCategory = ({ className, ...rest }) => {
       {error ? (
         <CardContent>
           <Box height={300} position="relative">
-            <svg width="100%" height="100%" viewBox="0 0 42 42" class="donut">
+            <svg width="90%" height="90%" viewBox="0 0 42 42" class="donut">
               <circle
                 class="donut-hole"
                 cx="21"
@@ -137,7 +137,7 @@ const SpendingPerCategory = ({ className, ...rest }) => {
                 stroke-width="3"
               ></circle>
             </svg>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h5" gutterBottom align="center">
               You have not spent yet.
             </Typography>
           </Box>
