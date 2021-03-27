@@ -6,7 +6,6 @@ export const getAllCategories = (setCategoriesState) => {
   })
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
       localStorage.setItem("categories", JSON.stringify(json));
     });
 };

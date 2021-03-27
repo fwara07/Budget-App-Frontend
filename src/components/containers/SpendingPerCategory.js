@@ -109,7 +109,7 @@ const SpendingPerCategory = ({ className, ...rest }) => {
       {error ? (
         <CardContent>
           <Box height={300} position="relative">
-            <svg width="90%" height="90%" viewBox="0 0 42 42" class="donut">
+            <svg width="100%" height="90%" viewBox="0 0 42 42" class="donut">
               <circle
                 class="donut-hole"
                 cx="21"
