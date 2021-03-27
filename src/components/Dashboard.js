@@ -56,7 +56,7 @@ class Dashboard extends Component {
           <div className="col">
             <div className="home__hero-text-wrapper">
               <h1 component="h1" className="heading">
-                Budgeting Made Easy
+                Hello Made Easy
               </h1>
               <p className="home__hero-subtitle">
                 Learn to create budgets with pretend money, to get ready for the
