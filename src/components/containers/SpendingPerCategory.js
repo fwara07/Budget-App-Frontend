@@ -35,7 +35,7 @@ const SpendingPerCategory = ({ className, ...rest }) => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/get-percentage", {
+    fetch("/api/get-percentage", {
       headers: {
         Authorization: `JWT ${localStorage.getItem("token")}`,
       },

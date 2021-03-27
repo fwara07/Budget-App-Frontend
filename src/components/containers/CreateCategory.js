@@ -86,7 +86,7 @@ class CreateCategory extends Component {
         ? `update-category/${this.updateCategoryID}`
         : "create-category";
       const fetchMethod = this.isUpdate ? "PUT" : "POST";
-      fetch(`http://localhost:8000/api/${fetchUrl}`, {
+      fetch(`/api/${fetchUrl}`, {
         method: fetchMethod,
         headers: {
           "Content-Type": "application/json",

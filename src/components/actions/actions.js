@@ -1,5 +1,5 @@
 export const getAllCategories = (setCategoriesState) => {
-  fetch("http://localhost:8000/api/category", {
+  fetch("/api/category", {
     headers: {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     },
@@ -14,7 +14,7 @@ export const getAllCategories = (setCategoriesState) => {
 };
 
 export const getBalance = (setBalanceState, state) => {
-  fetch("http://localhost:8000/api/get-balance", {
+  fetch("/api/get-balance", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -29,7 +29,7 @@ export const getBalance = (setBalanceState, state) => {
 };
 
 export const getTotalHistoryData = (setHistoryData) => {
-  fetch("http://localhost:8000/api/total-history", {
+  fetch("/api/total-history", {
     headers: {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     },

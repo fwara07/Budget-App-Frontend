@@ -26,7 +26,7 @@ export default class Deposit extends Component {
     data.category = data.category.id;
     delete data.error;
     if (this.validateData(data)) {
-      fetch("http://localhost:8000/api/deposit", {
+      fetch("/api/deposit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

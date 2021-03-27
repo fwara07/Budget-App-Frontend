@@ -40,7 +40,7 @@ export default class Transfer extends Component {
           error: "You cannot transfer funds less than or equal to $0.00",
         });
       } else {
-        fetch("http://localhost:8000/api/withdraw", {
+        fetch("/api/withdraw", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default class Transfer extends Component {
         }).then((_res) => {
           const deposit_data = { ...this.state };
           deposit_data.category = this.state.category;
-          fetch("http://localhost:8000/api/deposit", {
+          fetch("/api/deposit", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

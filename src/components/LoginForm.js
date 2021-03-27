@@ -53,7 +53,7 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const data = { ...this.state };
     delete data.error;
-    fetch("http://localhost:8000/token-auth/", {
+    fetch("/token-auth/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

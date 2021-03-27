@@ -44,7 +44,7 @@ class SignupForm extends React.Component {
     delete data.error;
     const is_valid = this.validateData(data);
     if (is_valid.ok) {
-      fetch("http://localhost:8000/core/users/", {
+      fetch("/core/users/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

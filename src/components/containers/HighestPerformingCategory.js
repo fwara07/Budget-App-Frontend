@@ -28,7 +28,7 @@ const HighestPerformingCategory = ({ className, ...rest }) => {
   const [performingCategory, setPerformingCategory] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/highest-performing-category", {
+    fetch("/api/highest-performing-category", {
       headers: {
         Authorization: `JWT ${localStorage.getItem("token")}`,
       },

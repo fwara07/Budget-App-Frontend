@@ -26,7 +26,7 @@ const LineChart = ({ className, ...rest }) => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/get-line-chart-data", {
+    fetch("/api/get-line-chart-data", {
       headers: {
         Authorization: `Jwt ${localStorage.getItem("token")}`,
       },

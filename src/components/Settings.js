@@ -37,15 +37,12 @@ export default class Settings extends Component {
   };
 
   deletCategory = () => {
-    fetch(
-      `http://localhost:8000/api/delete-category/${this.state.category.id}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `JWT ${localStorage.getItem("token")}`,
-        },
-      }
-    )
+    fetch(`/api/delete-category/${this.state.category.id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `JWT ${localStorage.getItem("token")}`,
+      },
+    })
       .then((res) => res.json())
       .then((_json) => {
         getAllCategories(() => {});

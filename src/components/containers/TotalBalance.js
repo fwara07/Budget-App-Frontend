@@ -28,7 +28,7 @@ const TotalBalance = ({ className, ...rest }) => {
   const [balance, setBalance] = useState(0);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/total-balance", {
+    fetch("/api/total-balance", {
       headers: {
         Authorization: `JWT ${localStorage.getItem("token")}`,
       },

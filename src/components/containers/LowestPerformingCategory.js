@@ -28,7 +28,7 @@ const LowestPerformingCategory = ({ className, ...rest }) => {
   const [notPerformingCategory, setNotPerformingCategory] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/lowest-performing-category", {
+    fetch("/api/lowest-performing-category", {
       headers: {
         Authorization: `JWT ${localStorage.getItem("token")}`,
       },
