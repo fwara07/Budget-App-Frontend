@@ -35,21 +35,24 @@ const SpendingPerCategory = ({ className, ...rest }) => {
     colors.purple[500],
   ];
 
-  useEffect(async () => {
-    let response = await fetch(
-      "https://budget-planning.herokuapp.com/api/get-percentage",
-      {
-        headers: {
-          Authorization: `JWT ${localStorage.getItem("token")}`,
-        },
+  useEffect(() => {
+    const getChartData = async () => {
+      let response = await fetch(
+        "https://budget-planning.herokuapp.com/api/get-percentage",
+        {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      let json = await response.json();
+      if (!json.hasOwnProperty("msg")) {
+        setSeries(Object.values(json));
+      } else {
+        setError(true);
       }
-    );
-    let json = await response.json();
-    if (!json.hasOwnProperty("msg")) {
-      setSeries(Object.values(json));
-    } else {
-      setError(true);
-    }
+    };
+    getChartData();
   }, []);
 
   const labels = JSON.parse(localStorage.getItem("categories")).map(
