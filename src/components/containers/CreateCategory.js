@@ -166,7 +166,7 @@ class CreateCategory extends Component {
                 </Grid>
                 <Grid item xs={12}>
                   <InputLabel htmlFor="outlined-adornment-amount">
-                    Depost limit amount
+                    Deposit limit amount
                     <CustomTooltip title="This is the amount you cannot exced to make a deposit.">
                       <HelpIcon fontSize="small" />
                     </CustomTooltip>
