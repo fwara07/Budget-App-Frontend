@@ -26,15 +26,19 @@ const LineChart = ({ className, ...rest }) => {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
-    fetch("https://budget-planning.herokuapp.com/api/get-line-chart-data", {
-      headers: {
-        Authorization: `Jwt ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setSeries(json);
-      });
+    const getChartData = async () => {
+      let response = await fetch(
+        "https://budget-planning.herokuapp.com/api/get-line-chart-data",
+        {
+          headers: {
+            Authorization: `Jwt ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      let json = await response.json();
+      setSeries(json);
+    };
+    getChartData();
   }, []);
 
   const data = {

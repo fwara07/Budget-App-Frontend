@@ -27,17 +27,20 @@ const HighestPerformingCategory = ({ className, ...rest }) => {
   const classes = useStyles();
   const [performingCategory, setPerformingCategory] = useState("");
 
-  useEffect(async () => {
-    let response = await fetch(
-      "https://budget-planning.herokuapp.com/api/highest-performing-category",
-      {
-        headers: {
-          Authorization: `JWT ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-    let json = await response.json();
-    setPerformingCategory(json);
+  useEffect(() => {
+    const getPerformingCategory = async () => {
+      let response = await fetch(
+        "https://budget-planning.herokuapp.com/api/highest-performing-category",
+        {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      let json = await response.json();
+      setPerformingCategory(json);
+    };
+    getPerformingCategory();
   }, []);
 
   return (

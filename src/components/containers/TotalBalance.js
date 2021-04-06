@@ -28,15 +28,19 @@ const TotalBalance = ({ className, ...rest }) => {
   const [balance, setBalance] = useState(0);
 
   useEffect(() => {
-    fetch("https://budget-planning.herokuapp.com/api/total-balance", {
-      headers: {
-        Authorization: `JWT ${localStorage.getItem("token")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        setBalance(json);
-      });
+    const getBalance = async () => {
+      let response = await fetch(
+        "https://budget-planning.herokuapp.com/api/total-balance",
+        {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      let json = await response.json();
+      setBalance(json);
+    };
+    getBalance();
   }, []);
 
   return (

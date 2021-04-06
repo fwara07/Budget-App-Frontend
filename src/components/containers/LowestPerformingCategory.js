@@ -27,17 +27,20 @@ const LowestPerformingCategory = ({ className, ...rest }) => {
   const classes = useStyles();
   const [notPerformingCategory, setNotPerformingCategory] = useState("");
 
-  useEffect(async () => {
-    let response = await fetch(
-      "https://budget-planning.herokuapp.com/api/lowest-performing-category",
-      {
-        headers: {
-          Authorization: `JWT ${localStorage.getItem("token")}`,
-        },
-      }
-    );
-    let json = await response.json();
-    setNotPerformingCategory(json);
+  useEffect(() => {
+    const getNotPerformingCategory = async () => {
+      let response = await fetch(
+        "https://budget-planning.herokuapp.com/api/lowest-performing-category",
+        {
+          headers: {
+            Authorization: `JWT ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      let json = await response.json();
+      setNotPerformingCategory(json);
+    };
+    getNotPerformingCategory();
   }, []);
 
   return (
