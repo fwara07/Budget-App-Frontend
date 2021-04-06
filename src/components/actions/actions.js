@@ -12,8 +12,8 @@ export const getAllCategories = async (setCategoriesState) => {
   return json;
 };
 
-export const getBalance = (setBalanceState, state) => {
-  fetch("https://budget-planning.herokuapp.com/api/get-balance", {
+export const getBalance = async (setBalanceState, state) => {
+  let response = await fetch("https://budget-planning.herokuapp.com/api/get-balance", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -21,20 +21,16 @@ export const getBalance = (setBalanceState, state) => {
     },
     body: JSON.stringify({ category: state.category }),
   })
-    .then((res) => res.json())
-    .then((json) => {
-      setBalanceState(json);
-    });
+  let json = await response.json()
+  setBalanceState(json);
 };
 
 export const getTotalHistoryData = (setHistoryData) => {
-  fetch("https://budget-planning.herokuapp.com/api/total-history", {
+  let response = await fetch("https://budget-planning.herokuapp.com/api/total-history", {
     headers: {
       Authorization: `JWT ${localStorage.getItem("token")}`,
     },
   })
-    .then((res) => res.json())
-    .then((json) => {
-      setHistoryData(json);
-    });
+  let json = await reponse.json()
+  setHistoryData(json);
 };
