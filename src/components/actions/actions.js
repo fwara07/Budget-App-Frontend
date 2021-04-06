@@ -37,6 +37,6 @@ export const getTotalHistoryData = async (setHistoryData) => {
       },
     }
   );
-  let json = await reponse.json();
+  let json = await response.json();
   setHistoryData(json);
 };
