@@ -1,13 +1,15 @@
-export const getAllCategories = (setCategoriesState) => {
-  fetch("https://budget-planning.herokuapp.com/api/category", {
-    headers: {
-      Authorization: `JWT ${localStorage.getItem("token")}`,
-    },
-  })
-    .then((res) => res.json())
-    .then((json) => {
-      localStorage.setItem("categories", JSON.stringify(json));
-    });
+export const getAllCategories = async (setCategoriesState) => {
+  let response = await fetch(
+    "https://budget-planning.herokuapp.com/api/category",
+    {
+      headers: {
+        Authorization: `JWT ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+  let json = await response.json();
+  localStorage.setItem("categories", JSON.stringify(json));
+  return json;
 };
 
 export const getBalance = (setBalanceState, state) => {
